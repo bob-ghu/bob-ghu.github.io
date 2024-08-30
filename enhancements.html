@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Enhancements Page">
+    <meta name="keywords" content="enhancements">
+    <meta name="author" content="Siew Yat Fei">
+    <title>HyperTech - Enhancements</title>
+    <link href="styles/style.css" rel="stylesheet">
+    <link rel="icon" href="images/company-logo.png" type="image/x-icon">
+    <script src="scripts/enhancements.js"></script>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <header>
+        <section> <!-- Company Logo -->
+            <a href="index.html">
+                <img class="company-logo" src="images/company-logo.png" alt="HyperTech">
+            </a>
+        </section> 
+        <section class="header-container">
+            <a href="index.html" class="color-cycle">
+                <h1>HYPERTECH</h1> <!-- Company Name -->
+            </a>
+            <nav>
+                <ul> <!-- Navigation Buttons -->
+                    <li><a href="index.html" id="index-nav">Home</a></li>
+                    <li><a href="jobs.html" id="jobs-nav">Jobs</a></li>
+                    <li><a href="apply.html" id="apply-nav">Applications</a></li>
+                    <li><a href="about.html" id="about-nav">About Me</a></li>
+                    <li><a href="enhancements.html" id="enhancements-nav">Enhancements</a></li>
+                    <li><a href="enhancements2.html" id="enhancements2-nav">JavaScript Enhancements</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+    
+    <main id="main">
+        <a href="#main"> <!-- Banner on Bottom Right -->
+            <section class="banner-overlay">
+                <img src="images/company-banner.png" alt="Company Banner">
+            </section>
+        </a>
+        <section class="enhancements-header">
+            <h1>Enhancements</h1>
+        </section>
+        <section class="color-change-details fade-in-move-section">
+            <h2>Color-Changing Text</h2>
+            <p>- When the cursor hovers over the company name (HYPERTECH) on the Navigation Menu, it constantly changes color.</p>
+            <p>- It provides a visual indicator that the hovered text can be clicked.</p>
+            <p>- This is achieved by using [@keyframes] and the property [animation].</p>
+            <p>- @keyframes allows you to define and control animations by specifying keyframes at various points in an animation's timeline.</p>
+            <p>- By specifying a color at each point (10%, 20%, etc), the animation will transition through the colours smoothly.</p>
+            <p>- The property [animation] helps control the speed and duration of the animation</p>
+            <p>- Since the Navigation Menu is fixed , there is no hyperlink provided as the company name (HYPERTECH) is always on the top left.</p>
+            <p>- In the CSS files, the CSS rules can be found at line 49-79.</p>
+        </section>
+        <section class="fade-in-details fade-in-move-section">
+            <h2>Image/Text Fade In Animation</h2>
+            <p>- Whenever a page is loaded, an animation starts whereas specific text/images fade into view.</p>
+            <p>- This gives more focus onto those text/images which have important information.</p>
+            <p>- This is achieved by using [@keyframes] and the properties [animation, transform].</p>
+            <p>- @keyframes allows you to define and control animations by specifying keyframes at various points in an animation's timeline.</p>
+            <p>- By specifying the position and opacity at each point (10%, 20%, etc), the animation will transition through them smoothly.</p>
+            <p>- The property [animation] helps control the speed and duration of the animation</p>
+            <p>- The property [transform] sets the starting and ending positions of the keyframes</p>
+            <p>- Every page including this one has the fade in animation. Links to the others [<a href="index.html">I</a>,<a href="jobs.html">II</a>,<a href="apply.html">III</a>,<a href="about.html">IV</a>]</p>
+            <p>- In the CSS files, the CSS rules can be found at line 116-132.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 HyperTech</p>
+        <p>Contact Us: 
+            <a href="mailto:104841067@student.swin.edu.au">
+                <img src="images/email.png" alt="Email Icon" id="email-icon">
+            </a>
+            ||
+            <img src="images/phone.png" alt="Phone Icon" id="phone-icon">
+            (+60)12 3456789 ||
+            <a href="https://www.linkedin.com">
+                <img src="images/linkedin.png" alt="LinkedIn Icon" id="linkedin-icon">
+            </a>
+        </p>
+    </footer>
+</body>
+</html>

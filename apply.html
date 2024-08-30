@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="description" content="Application Page">
+    <meta name="keywords" content="apply, application">
+    <meta name="author" content="Siew Yat Fei">
+    <title>HyperTech - Applications</title>
+    <link href="styles/style.css" rel="stylesheet">
+    <link rel="icon" href="images/company-logo.png" type="image/x-icon">
+	<script src="scripts/apply.js"></script>
+	<script src="scripts/enhancements.js"></script>
+</head>
+<body>
+	<!-- Navigation Menu -->
+    <header>
+        <section> <!-- Company Logo -->
+            <a href="index.html">
+                <img class="company-logo" src="images/company-logo.png" alt="HyperTech">
+            </a>
+        </section>
+        <section class="header-container">
+            <a href="index.html" class="color-cycle">
+                <h1>HYPERTECH</h1> <!-- Company Name -->
+            </a>
+            <nav>
+                <ul> <!-- Navigation Buttons -->
+                    <li><a href="index.html" id="index-nav">Home</a></li>
+                    <li><a href="jobs.html" id="jobs-nav">Jobs</a></li>
+                    <li><a href="apply.html" id="apply-nav">Applications</a></li>
+                    <li><a href="about.html" id="about-nav">About Me</a></li>
+                    <li><a href="enhancements.html" id="enhancements-nav">Enhancements</a></li>
+                    <li><a href="enhancements2.html" id="enhancements2-nav">JavaScript Enhancements</a></li>
+                </ul>
+            </nav>
+        </section> 
+    </header>
+
+    <main id="main">
+		<a href="#main"> <!-- Banner on Bottom Right -->
+			<section class="banner-overlay">
+				<img src="images/company-banner.png" alt="Company Banner">
+			</section>
+		</a> 
+		<h1 class="apply-header">Application Form</h1>
+		<section class="fade-in-move-section">
+			<p>Expect a response within 5 working days.</p>
+			<p>You'll be contacted for an interview if your application is accepted</p>
+		</section>
+		<section class="form-timer">
+			<p>This session will end in </p>
+			<span id="minutes">00</span>:
+   			<span id="seconds">00</span>
+		</section>
+		<section class="form-container fade-in-move-section"> <!-- Application Form -->
+			<form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php" class="form" id="applyform" novalidate="novalidate">
+				<fieldset class="personal-information">
+					<legend>Personal Information</legend>
+					<p>
+						<label for="ref">Job Reference Number</label>
+					</p>
+					<p>
+						<input type="text" name="Job Reference Number" id="ref" pattern="^[Jj]{1}\d{4}" maxlength="5" size="60" placeholder="Please get your job reference number from the [Jobs] page.">
+						<section class="error-message" id="ref-error"></section>
+					</p>
+					<section class="fname-and-lname">
+						<section class="fname">
+							<p>
+								<label for="fname">First Name</label>
+							</p>
+							<p>
+								<input type="text" name="First Name" id="fname" maxlength="20" size="24" placeholder="Bob">
+							</p>
+							<section class="error-message" id="fname-error"></section>
+						</section>
+						<section class="lname">
+							<p>
+								<label for="lname">Last Name</label>
+							</p>
+							<p>
+								<input type="text" name="Last Name" id="lname" maxlength="20" size="24" placeholder="Fry">
+								<section class="error-message" id="lname-error"></section>
+							</p>
+						</section>
+					</section>
+					<section class="dob-and-gender">
+						<section class="dob">
+							<p>
+								<label for="dob">Date of Birth</label>
+							</p>
+							<p>
+								<input type="date" name="Date of Birth" id="dob">
+								<section class="error-message" id="dob-error"></section>
+							</p>
+						</section>
+						<fieldset class="gender">
+							<legend>Gender</legend>
+							<p>
+								<label for="male">Male</label>
+								<input type="radio" name="Gender" id="male" value="male">
+								<label for="female">Female</label>
+								<input type="radio" name="Gender" id="female" value="female">
+								<section class="error-message" id="gender-error"></section>
+							</p>
+						</fieldset>
+					</section>
+				</fieldset>
+	
+				<fieldset>
+					<legend>Address</legend>
+					<p>
+						<label for="street">Street Address</label>
+					</p>
+					<p>
+						<input type="text" name="Street Address" id="street" maxlength="40" size="60" placeholder="Jalan SS15/8">
+						<section class="error-message" id="street-error"></section>
+					</p>
+					<p>
+						<label for="suburb">Suburb/Town</label>
+					</p>
+					<p>
+						<input type="text" name="Suburb/Town" id="suburb" maxlength="40" size="60" placeholder="Subang">
+						<section class="error-message" id="suburb-error"></section>
+					</p>
+					<section class="state-and-postcode">
+						<section class="state">
+							<p>
+								<label for="state">State</label>
+							</p>
+							<p>
+								<select name="State" id="state">
+									<option value = "">Please Select</option>
+									<option value = "Victoria">VIC - Victoria</option>
+									<option value = "New South Wales">NSW - New South Wales</option>
+									<option value = "Queensland">QLD - Queensland</option>
+									<option value = "Nothern Territory">NT - Nothern Territory</option>
+									<option value = "Western Australia">WA - Western Australia</option>
+									<option value = "South Australia">SA - South Australia</option>
+									<option value = "Tasmania">TAS - Tasmania</option>
+									<option value = "Australian Capital Territory">ACT - Australian Capital Territory</option>
+								</select>
+								<section class="error-message" id="state-error"></section>
+							</p>
+						</section>
+						<section class="postcode">
+							<p>
+								<label for="postcode">Postcode</label>
+							</p>
+							<p>
+								<input type="text" name="Postcode" id="postcode" pattern="^\d{4}" maxlength="4" size="12" placeholder="8750">
+								<section class="error-message" id="postcode-error"></section>
+							</p>
+						</section>
+					</section>	
+				</fieldset>
+	
+				<fieldset>
+					<legend>Contact Details</legend>
+					<p>
+						<label for="email">Email Address</label>
+					</p>
+					<p>
+						<input type="email" name="Email Address" id="email" size="60" placeholder="someone@mail.com">
+						<section class="error-message" id="email-error"></section>
+					</p>
+					<p>
+						<label for="phonenum">Phone Number</label>
+					</p>
+					<p>
+						<input type="text" name="Phone Number" id="phonenum" pattern="^[0-9 ]+$" minlength="8" maxlength="12" size="60" placeholder="60 12345678">
+						<section class="error-message" id="phonenum-error"></section>
+					</p>
+				</fieldset>
+	
+				<fieldset class="skills">
+					<legend>Skills</legend>
+					<section class="error-message" id="skills-error"></section>
+					<p>
+						<input type="checkbox" id="problem-solve" name="Skills 1" value="problem-solve">
+						<label for="problem-solve">Strong analytical and problem-solving skills.</label>
+					</p>
+					<p>
+						<input type="checkbox" id="communication" name="Skills 2" value="communication">
+						<label for="communication">Excellent communication and presentation skills.</label>
+					</p>
+					<p>
+						<input type="checkbox" id="ux-ui-design" name="Skills 3" value="ux-ui-design">
+						<label for="ux-ui-design">Familiarity with UX/UI design principles.</label>
+					</p>
+					<p>
+						<input type="checkbox" id="work-independently" name="Skills 4" value="work-independently">
+						<label for="work-independently">Ability to work independently and as part of a team.</label>
+					</p>
+					<p>
+						<input type="checkbox" id="otherskills" name="Other skills" value="otherskills">
+						<label for="otherskills">Other skills</label>
+						<textarea id="otherskillsdesc" name="Other Skills Description" rows="4" cols="40" placeholder="Enter the description of your other skills here..." style="width: 240px; height: auto;"></textarea>
+						<section class="error-message" id="otherskills-error"></section>
+					</p>
+				</fieldset>
+				<section class="book-and-reset">
+					<input type="submit" id="submit "value="Book">
+					<input type="reset" id="reset" value="Reset Form">
+				</section>
+			</form>
+		</section>
+    </main>
+    <footer>
+		<p>&copy; 2023 HyperTech</p>
+        <p>Contact Us: 
+            <a href="mailto:104841067@student.swin.edu.au">
+                <img src="images/email.png" alt="Email Icon" id="email-icon">
+            </a>
+            ||
+            <img src="images/phone.png" alt="Phone Icon" id="phone-icon">
+            (+60)12 3456789 ||
+            <a href="https://www.linkedin.com">
+                <img src="images/linkedin.png" alt="LinkedIn Icon" id="linkedin-icon">
+            </a>
+        </p>
+    </footer>
+</body>
+</html>

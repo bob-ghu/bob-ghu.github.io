@@ -1,0 +1,807 @@
+/*
+filename: [style.css]
+author: [Siew Yat Fei]
+created: [11/9/2023]
+last modified: [20/9/2023]
+description: [CSS Layout file for index.html, jobs.html, apply.html, about.html, enhancements.html]
+*/
+
+/* General styling used over multiple HTMLs */
+@font-face {
+    font-family: 'CynthoNextExtraBold';
+    src: url('styles/fonts/cyntho-next/CynthoNextExtraBold.otf') format('otf');
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'CynthoNextExtraBold', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color:#ffffff;
+    background-image: linear-gradient(rgb(23, 24, 16, 0.5), rgb(23, 24, 16, 0.5)),url('images/website-background.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 1;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.company-logo {
+    float: left;
+    background-color:rgb(23, 24, 16, 0.6);
+    width: 40px;
+    padding: 14px 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.company-logo:hover {
+    filter: hue-rotate(180deg);
+}
+
+.color-cycle {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.color-cycle:hover {
+    color: #A5C5E9;
+    -webkit-text-stroke: 0.3px #ffffff;
+    animation: colorCycle 5s infinite; /* 5s duration, infinitely repeating */
+}
+
+@keyframes colorCycle {
+    0% {
+        color: red;
+    }
+    20% {
+        color: green;
+    }
+    40% {
+        color: blue;
+    }
+    60% {
+        color: orange;
+    }
+    80% {
+        color: purple;
+    }
+    100% {
+        color: red; /* Back to the initial color */
+    }
+}
+
+.header-container {
+    display: flex; /* Use flexbox to create a horizontal layout */
+    align-items: center; /* Vertically center content */
+    justify-content: space-between;
+    background-color: rgb(23, 24, 16, 0.6);
+    padding: 0px; /* Add padding as needed for content inside the header */
+    font-family: 'CynthoNextExtraBold', sans-serif;
+    font-size: medium;
+    color: #ffffff; /* Set text color to contrast with the background */
+}
+
+nav {
+    list-style: none;
+    padding: 0;
+    margin-right: 5px;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 15px 20px;
+    margin: 0px 5px;
+    color: #ffffff;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    border-radius: 10px;
+}
+
+nav a:hover { /* Change color when the navigation link is hovered */
+    background-color: #ffffff; /* New background color on hover */
+    color: #171810; /* Text color on hover*/
+}
+
+.fade-in-move-section {
+    opacity: 0;
+    transform: translateY(-20px); /* Initial position shift */
+    animation: fadeInMove 1s ease-in-out forwards;
+    transition: transform 0.5s ease-in-out;
+}
+
+@keyframes fadeInMove {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Initial position */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Final position */
+    }
+}
+
+.banner-overlay {
+    position: fixed;
+    top: 82%;
+    right: 0;
+    opacity: 80%;
+    z-index: 3;
+}
+
+.banner-overlay img {
+    width: 150px;
+    border-radius: 30px 0px 0px 30px;
+}
+
+main {
+    padding-top: 68px;
+}
+
+footer:not(.middle-footer) {
+    background-color: #171810;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+#email-icon {
+    width: 20px;
+}
+
+#phone-icon {
+    width: 10px;
+}
+
+#linkedin-icon {
+    width: 15px;
+}
+
+/* Styling used for index.html */
+.home-first {
+    margin-bottom: -5px;
+    position: relative;
+}
+
+.tech-lineup {
+    width: 100%;
+    z-index: 2;
+}
+
+.text-overlay {
+    position: absolute;
+    width: 41%;
+    top: 23%; /* Vertically center the text */
+    left: 72%; /* Vorizontally center the text */
+    transform: translate(-50%, -50%); /* Center the text precisely */
+    color: #ffffff;
+    padding: 30px;
+    text-shadow: 3px 3px #9c9d9e;
+    text-align: left;
+    font-size: 3.75vw;
+    line-height: 1.3;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    animation: changeFontSize 0.3s linear;
+}
+
+.link-overlay { 
+    position: absolute;
+    width: fit-content;
+    top: 47%; /* Vertically center the text */
+    left: 56%; /* Horizontally center the text */
+    transform: translate(-50%, -50%); /* Center the text precisely */
+    background-color: #9c9d9e;
+    color: #171810;
+    padding: 5px 25px 5px 25px;
+    box-shadow: 3px 3px #171810;
+    text-align: left;
+    font-size: 1.1vw;
+    line-height: 0.2;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.white-background {
+    box-sizing: border-box;
+    border-top: 5px solid #171810;
+    border-bottom: 5px solid #171810;
+    width: 100%;
+    padding: 80px 20px;
+    z-index: 2;
+    background-color: #ffffff;
+    color: #171810;
+}
+
+.about-company {
+    width: 100%;
+}
+
+.about-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.about-icons p {
+    max-width: 350px;
+    margin: 20px;
+}
+
+.about-icons img {
+    margin: 10px 100px;
+    width: 75px;
+}
+
+.join-our-team {
+    position: relative;
+}
+
+.bearded-man-web {
+    width: 100%;
+    z-index: 2;
+}
+
+.text-overlay-join {
+    position: absolute;
+    width: 50%;
+    top: 14%; /* Vertically center the text */
+    left: 32%; /* Vorizontally center the text */
+    transform: translate(-50%, -50%); /* Center the text precisely */
+    color: #171810;
+    padding: 5px 25px 5px 25px;
+    text-shadow: 3px 3px #9c9d9e;
+    text-align: left;
+    font-size: 3.2vw;
+    line-height: 1.2;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.link-overlay-join {
+    position: absolute;
+    width: fit-content;
+    top: 28%; /* Vertically center the text */
+    left: 16%; /* Horizontally center the text */
+    transform: translate(-50%, -50%); /* Center the text precisely */
+    background-color: #9c9d9e;
+    color: #171810;
+    padding: 5px 25px 5px 25px; 
+    box-shadow: 3px 3px #171810;
+    text-align: left;
+    font-size: 1.18vw;
+    line-height: 0.2;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Styling used for jobs.html */
+.jobs-main-header {
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 5.8vw;
+    text-shadow: 3px 3px #9c9d9e;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.usability-specialist img {
+    width: 79%;
+    margin: 0px 0px 0px 60px;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for transform */
+    border: 3px solid #ffffff;
+    border-radius: 20px;
+}
+
+.web-developer img {
+    width: 79%;
+    margin: 0px 60px 0px 0px;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for transform */
+    border: 3px solid #ffffff;
+    border-radius: 20px;
+}
+
+.usability-specialist img:hover, .web-developer img:hover {
+    transform: scale(1.05); /* Scale the image up by 10% */
+}
+
+.usability-specialist {
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    float: left;
+    width: 50%;
+    text-shadow: 2px 2px #9c9d9e;
+    justify-content: center;
+    font-size: xx-large;
+}
+
+.web-developer {
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    float: right;
+    width: 50%;
+    text-shadow: 2px 2px #9c9d9e;
+    justify-content: center;
+    font-size: xx-large;
+}
+
+.jobs-details {
+    display: flex;
+    gap: 50px;
+}
+
+.usability-specialist-details {
+    display: inline-block;
+    text-align: left;
+    color: #171810;
+    background: linear-gradient(to bottom, #A5C5E9, #9c9d9e);
+    margin: 40px 0px 30px 50px;
+    padding: 15px 0px 25px 40px;
+    width: 82%;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+}
+
+.web-developer-details {
+    display: inline-block;
+    text-align: left;
+    color: #171810;
+    background: linear-gradient(to top, #A5C5E9, #9c9d9e);
+    margin: 40px 50px 30px 0px;
+    padding: 15px 0px 25px 40px;
+    width: 82%;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+}
+
+.jobs-details h1 {
+    padding: 0px 40px 0px 0px;
+    text-align: center;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: 2px 2px #9c9d9e;
+    font-size: 50px;
+    color: #171810;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.web-developer-details h1 {
+    text-shadow: 2px 2px #A5C5E9;
+}
+
+.jobs-details h2:not(.skills-header) {
+    text-align: left;
+    text-shadow: 2px 2px #171810;
+    background-color: #9c9d9e;
+    border-radius: 15px 15px 0px 0px;
+    border-width: 2px 2px 0 2px;
+    border-style: solid solid none solid; /* Border style for the bottom side */
+    border-color: #171810 #171810 transparent #171810; /* Border color for the bottom side */
+    padding: 10px;
+    font-size: large;
+    color: #ffffff;
+    margin-bottom: 0px;
+    margin-right: 40px;
+}
+
+.skills-header {
+    text-align: center;
+    text-shadow: 2px 2px #171810;
+    margin: 60px 40px 0px 0px;
+    background-color: #9c9d9e;
+    border-radius: 15px;
+    border: 2px solid #171810;
+    padding: 10px;
+    font-size: large;
+    color: #ffffff;
+}
+
+.jobs-details h3 {
+    text-align: left;
+    text-shadow: 2px 2px #171810;
+    background-color: #9c9d9e;
+    border-radius: 15px 15px 0px 0px;
+    border-width: 2px 2px 0 2px; 
+    border-style: solid solid none solid; /* Border style for the bottom side */
+    border-color: #171810 #171810 transparent #171810; /* Border color for the bottom side */
+    padding: 10px;
+    font-size: medium;
+    color: #ffffff;
+    margin-right: 40px;
+    margin-bottom: 0px;
+}
+
+.jobs-details p, .jobs-details ol, .jobs-details ul {
+    text-align: left;
+    margin-top: 0px;
+    margin-right: 40px;
+    background-color: #ffffff;
+    border-radius: 0px 0px 10px 10px;
+    border: 2px solid #171810;
+    line-height: 1.2;
+    padding: 10px;
+    color: #171810;
+    list-style-position: inside;
+}
+
+.three-horizontal {
+    display: flex;
+    align-items: center;
+}
+
+.three-horizontal section {
+    flex: 1;
+}
+
+.apply-horizontal {
+    display: inline-flex;
+    align-items: center;
+    width: 58%;
+    gap: 70%;
+}
+
+.apply-here {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.apply-link {
+    width: fit-content;
+    background-color: #ffffff;
+    padding: 5px 25px 5px 25px;
+    box-shadow: 3px 3px #9c9d9e;
+}
+
+.apply-here a {
+    color: #171810;
+    text-decoration: none;
+}
+
+.references-and-contacts {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    color: #171810;
+    margin-bottom: 30px;
+}
+
+.references-and-contacts h6 {
+    font-size: x-large;
+    margin: 0px;
+}
+
+.references {
+    padding: 22px 20px 18px 20px;
+    width: 75%;
+    background-color: #ffffff;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.references a {
+    color: #171810;
+    text-decoration: none;
+    text-shadow: 0.8px 0.8px #9c9d9e;
+}
+
+aside {
+    text-align: left;
+    width: 25%;
+    height: 170px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 0px 20px 20px 0px;
+}
+
+aside img {
+    width: 34px;
+    padding-left: 0px;
+}
+
+aside a {
+    color: #171810;
+    text-decoration: none;
+    text-shadow: 0.8px 0.8px #9c9d9e;
+}
+
+.middle-footer {
+    background-color: #171810;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.middle-footer p {
+    padding-left: 30px;
+}
+
+/* Styling used for apply.html */
+.apply-header {
+    font-size: 60px;
+    text-shadow: 2px 2px #9c9d9e;
+}
+
+.form-timer {
+    position: fixed;
+    z-index: 2;
+    top: 35%;
+    right: 11%;
+    background-color: #9e9c9c;
+    padding: 15px;
+    border-radius: 15px;
+    color: #171810;
+    box-shadow: 5px 5px #A5C5E9;
+}
+
+.form-container {
+    color:#171810;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+form {
+    color: #171810;
+    max-width: 500px;
+    background: linear-gradient(to left, #9c9d9e, #A5C5E9);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    box-shadow: 5px 5px #A5C5E9;
+    margin-bottom: 30px;
+}
+
+.error-message {
+    color: #d63030;
+}
+
+input:not(input[type="submit"], input[type="reset"]) {
+    padding: 15px;
+    height: 15px;
+    border-radius: 10px;
+}
+
+fieldset:not(.gender) {
+    border-width: 3px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    word-break: normal;
+}
+
+.fname-and-lname {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.fname {
+    width: 220px;
+}
+
+.lname {
+    width: 220px;
+}
+
+.dob-and-gender {
+    display: flex;
+    align-items: flex-start;
+}
+
+.dob {
+    width: 230px;
+}
+
+input[type=date] {
+    width: 189px;
+}
+
+.gender {
+    margin-top: 25px;
+    margin-left: 18px;
+    padding: 0px 10px;
+    width: 190px;
+    border-radius: 10px;
+}
+
+.state-and-postcode {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.state {
+    width: 300px;
+}
+
+.postcode {
+    width: 140px;
+}
+
+select {
+    padding: 15px;
+    width: 300px;
+    height: 50px;
+    border: 2px solid #171810;
+    border-radius: 10px;
+}
+
+#otherskillsdesc { /* Hides textarea if box not checked */
+    display: none;
+}
+
+#otherskills:checked ~ #otherskillsdesc { /* Textarea appears when box checked */
+    display: block;
+}
+
+textarea {
+    margin-top: 10px;
+    width: 1600px;
+}
+
+input[type="submit"], input[type="reset"] {
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.book-and-reset {
+    display: flex;
+    align-items: center;
+}
+
+/* Styling used for about.html */
+.about-body {
+    background-image: linear-gradient(rgb(23, 24, 16, 0.8), rgb(23, 24, 16, 0.8 )), url('images/rain-window.jpg');
+}
+
+.photo-and-details {
+    margin-top: 50px;
+    display: inline-block;
+    width: 51%;
+    color: #171810;
+}
+
+.my-photo {
+    float: right;
+}
+
+.my-photo img {
+    border: 1px solid #171810;
+    border-radius: 0px 40px 40px 0px;
+    width: 200px;
+}
+
+.my-personal-details {
+    line-height: 1.5;
+    width: 75%;
+    margin-top: 16.5px;
+    padding: 10px 0px 10px 30px;
+    border-radius: 40px 0px 0px 0px;
+    background-color: #A5C5E9;
+}
+
+#email-icon-dark {
+    width: 20px;
+}
+
+#phone-icon-dark {
+    width: 10px;
+}
+
+#linkedin-icon-dark {
+    width: 15px;
+}
+
+dl {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;  
+    line-height: 1;
+}
+
+dt {
+    flex: 25%;
+    text-align: right;
+    font-weight: bold;
+}
+
+dd {
+    text-align: left;
+    flex: 60%;
+}
+
+.my-contacts {
+    text-align: left;
+    margin-top: 0px;
+    padding: 10px 0px 13px 35px;
+    height: 50px;
+    width: 75%;
+    background-color: #ffffff;
+    border-radius: 0px 0px 0px 40px;
+}
+
+.my-contacts a {
+    text-decoration: none;
+}
+
+.subject-name {
+    text-align: center;
+}
+
+.subject-name h1 {
+    font-size: xx-large;
+    text-shadow: 3px 3px #9c9d9e;
+}
+
+.table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    margin: 20px 0px 40px 0px;
+    background:linear-gradient(to right, #A5C5E9, #9c9d9e);
+    border-collapse: collapse;
+    color: #171810;
+}
+
+th, td {
+    border: 3px solid #171810;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Styling used for enhancements.html */
+.enhancements-header {
+    font-size: xx-large;
+    text-align: center;
+    margin-left: 40px;
+    text-shadow: 3px 3px #9c9d9e;
+}
+
+.color-change-details {
+    color: #171810;
+    text-align: left;
+    margin-bottom: 40px;
+    padding: 30px;
+    background-color: #A5C5E9;
+}
+
+.color-change-details h2 {
+    font-size: x-large;
+}
+
+.fade-in-details {
+    color: #171810;
+    text-align: left;
+    margin-bottom: 40px;
+    padding: 30px;
+    background-color: #A5C5E9;
+}
+
+.fade-in-details h2 {
+    font-size: x-large;
+}
+
+.fade-in-details a {
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 1px 1px #9c9d9e;
+}

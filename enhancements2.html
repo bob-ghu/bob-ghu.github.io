@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="JavaScript Enhancements Page">
+    <meta name="keywords" content="javascript, enhancements">
+    <meta name="author" content="Siew Yat Fei">
+    <title>HyperTech - JavaScript Enhancements</title>
+    <link href="styles/style.css" rel="stylesheet">
+    <link rel="icon" href="images/company-logo.png" type="image/x-icon">
+    <script src="scripts/enhancements.js"></script>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <header>
+        <section> <!-- Company Logo -->
+            <a href="index.html">
+                <img class="company-logo" src="images/company-logo.png" alt="HyperTech">
+            </a>
+        </section> 
+        <section class="header-container">
+            <a href="index.html" class="color-cycle">
+                <h1>HYPERTECH</h1> <!-- Company Name -->
+            </a>
+            <nav>
+                <ul> <!-- Navigation Buttons -->
+                    <li><a href="index.html" id="index-nav">Home</a></li>
+                    <li><a href="jobs.html" id="jobs-nav">Jobs</a></li>
+                    <li><a href="apply.html" id="apply-nav">Applications</a></li>
+                    <li><a href="about.html" id="about-nav">About Me</a></li>
+                    <li><a href="enhancements.html" id="enhancements-nav">Enhancements</a></li>
+                    <li><a href="enhancements2.html" id="enhancements2-nav">JavaScript Enhancements</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+    
+    <main id="main">
+        <a href="#main"> <!-- Banner on Bottom Right -->
+            <section class="banner-overlay">
+                <img src="images/company-banner.png" alt="Company Banner">
+            </section>
+        </a>
+        <section class="enhancements-header">
+            <h1>JavaScript Enhancements</h1>
+        </section>
+        <section class="fade-in-details fade-in-move-section">
+            <h2>Navigation Underline Display</h2>
+            <p>- When the user navigates through the website using the Navigation Bar, the navigation text of the current page will be underlined. </p>
+            <p>- This is achieved by using [document.title] to check the user's currently viewed page and using [.style.textDecoration] to change the styling of the navigation text.</p>
+            <p>- Every page including this one has the dynamic display. Links to the others [<a href="index.html">I</a>,<a href="jobs.html">II</a>,<a href="apply.html">III</a>,<a href="about.html">IV</a>,<a href="enhancements.html">V</a>]</p>
+        </section>
+        <section class="fade-in-details fade-in-move-section">
+            <h2>Form Timer</h2>
+            <p>- When the user navigates to the Application page to apply for a job, a timer will be started for that session.</p>
+            <p>- If the form is not completed and submitted before the timer ends, the user will be redirected to the Home page.</p>
+            <p>- The user will have to re-fill the form again if the aforementioned case occurs.</p>
+            <p>- This is achieved by using [setInterval] which is set to perform a function at every 1000ms (= 1 second).</p>
+            <p>- Every interval the time display will update using [.textContent] and the format is created using [string.padStart] (05:00-0:00)</p>
+            <p>- The timer is displayed in the <a href="apply.html">Application page</a>.</p>
+        </section>
+        <section class="fade-in-details fade-in-move-section">
+            <h2>Job Details Changing Opacity</h2>
+            <p>- In the Jobs page, when the user clicks on either the Usability Specialist or Web Developer picture, the non-relevant job details will change opacity.</p>
+            <p>- For example, if the Usability Specialist picture is clicked, the Web Developer job details will change opacity and become faded.</p>
+            <p>- This allows the user to focus on only the relevant information.</p>
+            <p>- This is achieved by using [.addEventListener] to register a click on the image, [.querySelectorAll] to select all child elements of the job details section and [.style.opacity] to change the selected elements' opacity.</p>
+            <p>- This is implemented in the <a href="jobs.html">Jobs page</a>.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 HyperTech</p>
+        <p>Contact Us: 
+            <a href="mailto:104841067@student.swin.edu.au">
+                <img src="images/email.png" alt="Email Icon" id="email-icon">
+            </a>
+            ||
+            <img src="images/phone.png" alt="Phone Icon" id="phone-icon">
+            (+60)12 3456789 ||
+            <a href="https://www.linkedin.com">
+                <img src="images/linkedin.png" alt="LinkedIn Icon" id="linkedin-icon">
+            </a>
+        </p>
+    </footer>
+</body>
+</html>
